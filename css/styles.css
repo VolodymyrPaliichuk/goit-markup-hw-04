@@ -16,12 +16,8 @@ body {
 
 :root {
   --main-color: #fff;
-}
-:root {
+  --grd: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
   --main-text-color: #2e2f42;
-}
-
-:root {
   --secondary-text: #434455;
 }
 
@@ -171,15 +167,10 @@ img {
 .hero {
   padding: 188px;
   text-align: center;
-  max-width: 1440px;
+  max-width: 1158px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
-      to right,
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/people-office\ 1.jpg);
+  background-image: var(--grd), url(../images/people-office\ 1.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -360,6 +351,24 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   text-align: center;
+}
+
+.team-content-social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 8px;
+}
+.social-item {
+  width: 40px;
+  height: 40px;
+}
+.social-link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: teal;
+  border-radius: 50px;
 }
 
 /*-------------------------------------FILE-PORTFOLIO-------------------------*/

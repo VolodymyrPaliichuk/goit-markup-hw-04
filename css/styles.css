@@ -19,6 +19,8 @@ body {
   --grd: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
   --main-text-color: #2e2f42;
   --secondary-text: #434455;
+  --main-bgc: #f4f4fd;
+  --pointer-color: #404bbf;
 }
 
 h1,
@@ -52,7 +54,7 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  outline: solid red;
+  /* outline: solid red; */
 }
 
 /*-------------------------------------HEADER-------------------------*/
@@ -131,9 +133,8 @@ img {
   order: 0;
   flex-grow: 0;
 }
-.header-link:hover,
-.header-link:focus {
-  color: #404bbf;
+.header-link:is(:hover, :focus) {
+  color: var(--pointer-color);
 }
 
 .header-address-list {
@@ -149,9 +150,8 @@ img {
   font-style: normal;
 }
 
-.header-mail:hover,
-.header-mail:focus {
-  color: #404bbf;
+.header-mail:is(:hover, :focus) {
+  color: var(--pointer-color);
 }
 
 .header-tell {
@@ -167,7 +167,7 @@ img {
 .hero {
   padding: 188px;
   text-align: center;
-  max-width: 1158px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   background-image: var(--grd), url(../images/people-office\ 1.jpg);
@@ -202,9 +202,8 @@ img {
   margin-top: 48px;
 }
 
-.hero-btn-item:hover,
-.hero-btn-item:focus {
-  background-color: #404bbf;
+.hero-btn-item:is(:hover, :focus) {
+  background-color: var(--pointer-color);
 }
 
 /*-------------------------------------MAIN-WORK-------------------------*/
@@ -229,25 +228,25 @@ img {
   width: 264px;
   height: 112px;
   border-radius: 4px;
-  background-color: #f4f4fd;
+  background-color: var(--main-bgc);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .icon-antenna::before {
-  background-image: url(../svg/antenna\ 1.svg);
+  background-image: url(../images/antenna.svg);
 }
 
 .icon-clock::before {
-  background-image: url(../svg/clock\ 1.svg);
+  background-image: url(../images/clock.svg);
 }
 
 .icon-diagram::before {
-  background-image: url(../svg/diagram\ 1.svg);
+  background-image: url(../images/diagram.svg);
 }
 
 .icon-astronaut::before {
-  background-image: url(../svg/astronaut\ 1.svg);
+  background-image: url(../images/astronaut.svg);
 }
 
 .work-title {
@@ -299,7 +298,7 @@ img {
 /*-------------------------------------MAIN-TEAM-------------------------*/
 
 .main-section-team {
-  background-color: #f4f4fd;
+  background-color: var(--main-bgc);
   padding-top: 120px;
   padding-bottom: 120px;
 }
@@ -325,6 +324,8 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
   width: calc((100% - 72px) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .item-title {
   font-weight: 500;
@@ -362,13 +363,73 @@ img {
 .social-item {
   width: 40px;
   height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50px;
 }
 .social-link {
   width: 100%;
   height: 100%;
-  display: block;
-  background-color: teal;
-  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--main-bgc);
+}
+
+.social-item:is(:hover, :focus) {
+  background-color: var(--pointer-color);
+}
+
+.link-icon {
+}
+
+/* ------------------------------------MAIN-CLIENTS--------------------------- */
+
+.main-clients {
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+
+.client-title {
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--main-text-color);
+  margin-bottom: 72px;
+}
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.clients-item {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
+}
+.clients-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  color: #afb1b8;
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-link:is(:hover, :focus) {
+  border-color: var(--pointer-color);
+  color: var(--pointer-color);
 }
 
 /*-------------------------------------FILE-PORTFOLIO-------------------------*/
@@ -388,7 +449,7 @@ img {
 
 .main-btn {
   font-family: "Roboto";
-  background: #f4f4fd;
+  background: var(--main-bgc);
   border: 1px solid #e7e9fc;
   border-radius: 4px;
   font-weight: 500;
@@ -399,16 +460,14 @@ img {
   padding: 12px 24px;
 }
 
-.main-btn:hover,
-.main-btn:focus {
-  color: #fff;
-  background-color: #404bbf;
+.main-btn:is(:hover, :focus) {
+  color: var(--main-color);
+  background-color: var(--pointer-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /*-------------------------------------WORKS-------------------------*/
-
-.works {
-}
 
 .works-content {
   padding-left: 16px;
@@ -424,6 +483,12 @@ img {
 .works-item {
   width: calc((100% - 48px) / 3);
 }
+
+.works-item:is(:hover, :focus) {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 .works-title {
   font-weight: 500;
   font-size: 20px;
@@ -461,6 +526,10 @@ img {
   padding-bottom: 100px;
 }
 
+.block-footer-logo {
+  margin-right: 120px;
+}
+
 .footer-logo {
   display: flex;
   flex-direction: row;
@@ -480,7 +549,7 @@ img {
   align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #f4f4fd;
+  color: var(--main-bgc);
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -488,8 +557,38 @@ img {
 
 .footer-text {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #e7e9fc;
   max-width: 264px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-social-title {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  color: var(--main-color);
+}
+
+.footer-social-title {
+  margin-bottom: 16px;
+}
+
+.footer-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.footer-item:is(:hover, :focus) {
+  background-color: #31d0aa;
 }

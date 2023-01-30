@@ -480,6 +480,7 @@ img {
   column-gap: 24px;
   row-gap: 48px;
 }
+
 .works-item {
   width: calc((100% - 48px) / 3);
 }
